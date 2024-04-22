@@ -18,12 +18,16 @@ type
     procedure AddSliceToPie(const Values: TDataArray; const Captions: TArray<String>; const Colors: TArray<TColor>);
   public
     { Public declarations }
+    procedure ExplodeLargest;
   end;
 
 var
   PieChartChildGraph: TPieChartChildGraph;
 
 implementation
+
+uses
+  System.UITypes;
 
 {$R *.dfm}
 
@@ -37,11 +41,16 @@ begin
   PieSeries.Marks.Style := smsPercent;
 
   for i := 0 to High(Values) do
-  begin
     PieSeries.Add(Values[i], Captions[i], Colors[i]);
-  end;
 
   PieChart.AddSeries(PieSeries);
+end;
+
+procedure TPieChartChildGraph.ExplodeLargest;
+begin
+  var PieSeries := PieChart.Series[0] as TPieSeries;
+  PieSeries.ExplodeBiggest := 15;
+  PieChart.Invalidate;
 end;
 
 procedure TPieChartChildGraph.FormCreate(Sender: TObject);

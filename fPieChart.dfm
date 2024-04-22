@@ -27,10 +27,6 @@ object PieChartChildGraph: TPieChartChildGraph
       'TChart')
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 208
-    ExplicitTop = 184
-    ExplicitWidth = 400
-    ExplicitHeight = 250
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
   end

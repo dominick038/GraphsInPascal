@@ -47,9 +47,7 @@ begin
   BarSeries.Title := Caption;
 
   for var Axis in TwoDimensionalArray do
-  begin
     BarSeries.AddXY(Axis[0], Axis[1]);
-  end;
 
   BarGraphChart.AddSeries(BarSeries);
 end;

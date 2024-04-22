@@ -17,6 +17,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure BarGraphClick(Sender: TObject);
     procedure PieChartClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     FCurrentChildForm: TCustomForm;
     procedure LoadChildForm(ChildFormClass: TFormClass);
@@ -49,6 +50,15 @@ begin
   SetChildForm;
 
   WindowState := TWindowState.wsMaximized;
+end;
+
+procedure TDataVisMainMenu.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+   if (Key = VK_SPACE) and (FCurrentChildForm.ClassName = 'TPieChartChildGraph') then
+  begin
+    var FormAsPieChart := FCurrentChildForm as TPieChartChildGraph;
+    FormAsPieChart.ExplodeLargest;
+  end;
 end;
 
 procedure TDataVisMainMenu.LineGraphClick(Sender: TObject);

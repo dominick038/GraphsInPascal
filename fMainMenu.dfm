@@ -12,6 +12,7 @@ object DataVisMainMenu: TDataVisMainMenu
   Font.Style = []
   Menu = MainMenu
   OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   TextHeight = 15
   object MainMenu: TMainMenu
     Left = 360

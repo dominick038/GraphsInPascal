@@ -46,9 +46,7 @@ begin
   LineSeries.Title := Caption;
   
   for var Axis in TwoDimensionalArray do
-  begin
     LineSeries.AddXY(Axis[0], Axis[1]);
-  end;
 
   LineGraphChart.AddSeries(LineSeries);
 end;
