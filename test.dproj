@@ -112,6 +112,10 @@
             <Form>BarGraphChildForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="fPieChart.pas">
+            <Form>PieChartChildGraph</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
