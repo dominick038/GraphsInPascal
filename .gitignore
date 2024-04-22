@@ -1,0 +1,7 @@
+*.cbk
+*.res
+*.local
+__history
+__recovery
+
+*.identcache
